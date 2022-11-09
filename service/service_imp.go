@@ -3,7 +3,6 @@ package service
 import "moneyService/pkg/repository"
 
 type Service struct {
-	//AuthPostgres
 	Balance
 	History
 	Report

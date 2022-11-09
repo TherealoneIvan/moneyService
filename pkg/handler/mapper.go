@@ -96,7 +96,7 @@ func (h *Handler) CancelOrder(c *gin.Context) {
 		return
 	}
 	c.JSON(200, map[string]interface{}{
-		"deal_status": true,
+		"deal_canceled": true,
 	})
 }
 func (h *Handler) UserHistory(c *gin.Context) {
