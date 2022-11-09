@@ -37,151 +37,181 @@ migrate -path ./schema -database 'postgres://postgres:qwerty@localhost:5437/post
 
 Примеры входных данных и ответов , использовался постман 
 1
+```yaml
 {
-"id":2
+    "id":2
 }
 {
-"balance": 3002
+    "balance": 3002
 }
 {
-"id":1
+    "id":1
 }
 {
-"balance": 400.12
+    "balance": 400.12
 }
 
 
 2
 {
-"id":1,
-"money_amount":100.12
+    "id":1,
+    "money_amount":100.12
 }
 
 {
-"balance": 100.12
+    "balance": 100.12
+}
+
+
+
+{
+    "id":1,
+    "money_amount":300
 }
 
 {
-"id":1,
-"money_amount":300
+    "balance": 400.12
+}
+
+
+{
+    "id":2,
+    "money_amount":300
 }
 {
-"balance": 400.12
+    "balance": 300
 }
-{
-"id":2,
-"money_amount":300
-}
-{
-"balance": 300
-}
+
 
 3
 {
-"user_id":1,
-"service_id":1,
-"order_id":1,
-"order_cost":100.12
+    "user_id":1,
+    "service_id":1,
+    "order_id":1,
+    "order_cost":100.12
+}
+
+{
+    "amount_reserved": 100.12,
+    "new_reserved_balance": 100.12
+}
+
+{
+    "user_id":1,
+    "service_id":1,
+    "order_id":2,
+    "order_cost":10
 }
 {
-"amount_reserved": 100.12,
-"new_reserved_balance": 100.12
+    "amount_reserved": 10,
+    "new_reserved_balance": 110.12
 }
 {
-"user_id":1,
-"service_id":1,
-"order_id":2,
-"order_cost":10
+    "user_id":2,
+    "service_id":1,
+    "order_id":3,
+    "order_cost":101.123
 }
 {
-"amount_reserved": 10,
-"new_reserved_balance": 110.12
-}
-{
-"user_id":2,
-"service_id":1,
-"order_id":3,
-"order_cost":101.123
-}
-{
-"amount_reserved": 101.123,
-"new_reserved_balance": 101.123
+    "amount_reserved": 101.123,
+    "new_reserved_balance": 101.123
 }
 
 4
 {
-"id":1,
-"service_id":1,
-"order_id":1,
-"order_cost":100.12
+    "id":1,
+    "service_id":1,
+    "order_id":1,
+    "order_cost":100.12
 }
 {
-"deal_status": true
+    "deal_status": true
 }
 {
-"id":2,
-"service_id":1,
-"order_id":3,
-"order_cost":101.123
+    "id":2,
+    "service_id":1,
+    "order_id":3,
+    "order_cost":101.123
 }
 {
-"deal_status": true
+    "deal_status": true
 }
 
 5
 {
-"id":1,
-"service_id":1,
-"order_id":2,
-"order_cost":10
+    "id":1,
+    "service_id":1,
+    "order_id":2,
+    "order_cost":10
 }
 
 {
-"deal_canceled": true
+    "deal_canceled": true
 }
 6
 {
-"id":1
+    "id":1
 }
 {
-"1": {
-"Event": "adding money to balance                 ",
-"Amount": 100.12,
-"Date": "2022-11-09T23:37:45.740039Z"
-},
-"2": {
-"Event": "adding money to balance                 ",
-"Amount": 300,
-"Date": "2022-11-09T23:37:52.318606Z"
-},
-"3": {
-"Event": "reserving money from balance            ",
-"Amount": 100.12,
-"Date": "2022-11-09T23:38:32.543114Z"
-},
-"4": {
-"Event": "reserving money from balance            ",
-"Amount": 10,
-"Date": "2022-11-09T23:38:40.041821Z"
-},
-"5": {
-"Event": "successful payment                      ",
-"Amount": 100.12,
-"Date": "2022-11-09T23:39:10.73423Z"
-},
-"6": {
-"Event": "canceling order                         ",
-"Amount": 10,
-"Date": "2022-11-09T23:41:25.597948Z"
+    "1": {
+        "Event": "adding money to balance                 ",
+        "Amount": 100.12,
+        "Date": "2022-11-09T23:37:45.740039Z"
+    },
+    "2": {
+        "Event": "adding money to balance                 ",
+        "Amount": 300,
+        "Date": "2022-11-09T23:37:52.318606Z"
+    },
+    "3": {
+        "Event": "reserving money from balance            ",
+        "Amount": 100.12,
+        "Date": "2022-11-09T23:38:32.543114Z"
+    },
+    "4": {
+        "Event": "reserving money from balance            ",
+        "Amount": 10,
+        "Date": "2022-11-09T23:38:40.041821Z"
+    },
+    "5": {
+        "Event": "successful payment                      ",
+        "Amount": 100.12,
+        "Date": "2022-11-09T23:39:10.73423Z"
+    },
+    "6": {
+        "Event": "canceling order                         ",
+        "Amount": 10,
+        "Date": "2022-11-09T23:41:25.597948Z"
+    }
 }
+
+{
+   "id":2
+}
+{
+    "1": {
+        "Event": "adding money to balance                 ",
+        "Amount": 300,
+        "Date": "2022-11-09T23:38:06.964693Z"
+    },
+    "2": {
+        "Event": "reserving money from balance            ",
+        "Amount": 101.123,
+        "Date": "2022-11-09T23:38:50.941285Z"
+    },
+    "3": {
+        "Event": "successful payment                      ",
+        "Amount": 101.123,
+        "Date": "2022-11-09T23:40:04.863109Z"
+    }
 }
 
 7
 {
-"date":"2022-11"
+    "date":"2022-11"
 }
 {
-"report_url": "./report.csv"
+    "report_url": "./report.csv"
 }
 Возвращает ссылку на локальный файл репорт в котором лежит отчет
 service_id: 1,total_money_amount: 201.243
