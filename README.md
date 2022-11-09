@@ -38,120 +38,137 @@ migrate -path ./schema -database 'postgres://postgres:qwerty@localhost:5437/post
 Примеры входных данных и ответов , использовался постман 
 1
 ```yaml
+Input:
 {
     "id":2
 }
+Output:
 {
     "balance": 3002
 }
+Input:
 {
     "id":1
 }
+Output:
 {
     "balance": 400.12
 }
 
 
 2
+Input:
 {
     "id":1,
     "money_amount":100.12
 }
-
+Output:
 {
     "balance": 100.12
 }
 
 
-
+Input:
 {
     "id":1,
     "money_amount":300
 }
-
+Output:
 {
     "balance": 400.12
 }
 
-
+Input:
 {
     "id":2,
     "money_amount":300
 }
+Output:
 {
     "balance": 300
 }
 
 
 3
+Input:
 {
     "user_id":1,
     "service_id":1,
     "order_id":1,
     "order_cost":100.12
 }
-
+Output:
 {
     "amount_reserved": 100.12,
     "new_reserved_balance": 100.12
 }
-
+Input:
 {
     "user_id":1,
     "service_id":1,
     "order_id":2,
     "order_cost":10
 }
+Output:
 {
     "amount_reserved": 10,
     "new_reserved_balance": 110.12
 }
+Input:
 {
     "user_id":2,
     "service_id":1,
     "order_id":3,
     "order_cost":101.123
 }
+Output:
 {
     "amount_reserved": 101.123,
     "new_reserved_balance": 101.123
 }
 
 4
+Input:
 {
     "id":1,
     "service_id":1,
     "order_id":1,
     "order_cost":100.12
 }
+Output:
 {
     "deal_status": true
 }
+Input:
 {
     "id":2,
     "service_id":1,
     "order_id":3,
     "order_cost":101.123
 }
+Output:
 {
     "deal_status": true
 }
 
 5
+Input:
 {
     "id":1,
     "service_id":1,
     "order_id":2,
     "order_cost":10
 }
-
+Output:
 {
     "deal_canceled": true
 }
 6
+Input:
 {
     "id":1
 }
+Output:
 {
     "1": {
         "Event": "adding money to balance                 ",
@@ -184,10 +201,11 @@ migrate -path ./schema -database 'postgres://postgres:qwerty@localhost:5437/post
         "Date": "2022-11-09T23:41:25.597948Z"
     }
 }
-
+Input:
 {
    "id":2
 }
+Output:
 {
     "1": {
         "Event": "adding money to balance                 ",
@@ -207,9 +225,11 @@ migrate -path ./schema -database 'postgres://postgres:qwerty@localhost:5437/post
 }
 
 7
+Input:
 {
     "date":"2022-11"
 }
+Output:
 {
     "report_url": "./report.csv"
 }
